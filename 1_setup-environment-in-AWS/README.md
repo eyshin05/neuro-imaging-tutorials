@@ -55,8 +55,8 @@
     * If you don't want to use the port 8888 then use another number between 1024 ~ 49151.
       * https://en.wikipedia.org/wiki/Port_(computer_networking)#Common_port_numbers
   * Type `:wq!` to save this config file and quit vi editor.
-  * Finally, you can run jupyter notebook server with command `jupyter notebook --no-browser`.
-  * Go to `[your public IP address:port number]` in your web browser!
-    * You can see your public IP address in the AWS EC2 Management Consol page also. Select the instance and see the description tab. It seems like a `12.34.56.234`.
-    * So, if your public IP is 12.34.56.234 and your port number is 8888, then your notebook address is `http://12.34.56.234:8888`.
-    * Type your password! Then you can see your home folder through the jupyter notebook.
+* Finally, you can run jupyter notebook server with command `jupyter notebook --no-browser`.
+* Go to `[your public IP address:port number]` in your web browser!
+  * You can see your public IP address in the AWS EC2 Management Consol page also. Select the instance and see the description tab. It seems like a `12.34.56.234`.
+  * So, if your public IP is 12.34.56.234 and your port number is 8888, then your notebook address is `http://12.34.56.234:8888`.
+  * Type your password! Then you can see your home folder through the jupyter notebook.
