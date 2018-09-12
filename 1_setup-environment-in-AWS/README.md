@@ -47,16 +47,30 @@
   * Insert these codes at the bottom of the file.
     ```python
     c = get_config()
-    c.NotebookApp.password = u'[sha1:f24bafe49bb5:fffdd2ad737...]'
-    c.NotebookApp.ip = '[Your Private AWS IP Address]'
+    c.NotebookApp.password = u'sha1:f24bafe49bb5:fffdd2ad737...' # Your password hash code
+    c.NotebookApp.ip = '123.45.67.234' # Your private IP address
     c.NotebookApp.port_retries = 8888
     ```
-    * You can see your private IP address in the AWS EC2 Management Console page. Select the instance and see the description tab. It seems like a `123.45.67.234`.
+    * You can see your private IP address in the AWS EC2 Management Console page. Select the instance and see the Description tab. It seems like a `123.45.67.234`.
     * If you don't want to use the port 8888 then use another number between 1024 ~ 49151.
       * https://en.wikipedia.org/wiki/Port_(computer_networking)#Common_port_numbers
-  * Type `:wq!` to save this config file and quit vi editor.
+  * Type `:wq!` to save this config file and quit the vi editor.
 * Finally, you can run jupyter notebook server with command `jupyter notebook --no-browser`.
+
+## 4) Setting Inbound Port Number
+* In AWS EC2 Management Console page, select the instance and go to Description > Security groups and check the security group name.
+* In AWS Console page, select from the left menu; Network & Security > Security groups and select the security group name you checked.
+* Select the Inbound tab at the bottom, and add a port number the Jupyter Notebook server used.
+  * Click edit button.
+  * Click add rules button.
+    * Type: Custom TCP Rules.
+    * Port range: 8888
+    * Source: Custom, 0.0.0.0/0
+      * If you want to only specific IP can connect the notebook server, write the IP instead of 0.0.0.0
+  * Click save button.
+  
+## 5) Connect with the Jupyter Notebook
 * Go to `[your public IP address:port number]` in your web browser!
-  * You can see your public IP address in the AWS EC2 Management Consol page also. Select the instance and see the description tab. It seems like a `12.34.56.234`.
+  * You can see your public IP address in the AWS EC2 Management Consol page also. Select the instance and see the Description tab. It seems like a `12.34.56.234`.
   * So, if your public IP is 12.34.56.234 and your port number is 8888, then your notebook address is `http://12.34.56.234:8888`.
   * Type your password! Then you can see your home folder through the jupyter notebook.
