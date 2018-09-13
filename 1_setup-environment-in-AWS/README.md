@@ -2,6 +2,7 @@
 * AWS is an acronym for Amazon Web Services.
 * In short, it's just server cloud services.
 * See here: https://aws.amazon.com/what-is-aws/
+* If you have a server and want to setting it up your server, just skip 1).
 
 ## 1) Making an AWS EC2 Instance
 * See this link: https://aws.amazon.com/getting-started/tutorials/launch-a-virtual-machine/
