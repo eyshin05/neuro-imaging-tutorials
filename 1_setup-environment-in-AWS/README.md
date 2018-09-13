@@ -2,13 +2,13 @@
 * AWS is an acronym for Amazon Web Services.
 * In short, it's just server cloud services.
 * See here: https://aws.amazon.com/what-is-aws/
-* If you have a server and want to setting it up your server, just skip 1).
+* If you have a server and want to set it up your server, just skip 1).
 
 ## 1) Making an AWS EC2 Instance
 * See this link: https://aws.amazon.com/getting-started/tutorials/launch-a-virtual-machine/
   * Notice; Select an Ubuntu 16.04 instead of an Amazon Linux AMI in step 2 (configure step).
   * Use ssh command `ssh -i 'c:\Users\yourusername\.ssh\MyKeyPair.pem' ubuntu@{IP_Address}` instead of `ec2-user` for connecting.
-  * Other options are same
+  * Other options are the same
 
 ## 2) Setting up the NiLearn package
 * In this case, Python3.5 would already be installed. You can check it by typing `python3` in the connected AWS.
@@ -26,12 +26,9 @@
 ## 3) Installing Jupyter Notebook
 * Jupyter notebook is one of Python IDEs.
    * IDE is Integrated Development Environment, like Visual Studio, X Code, R studio or MATLAB client.
-   * There are many other Python IDEs like; iPython, PyCharm, Spyder, and others.
-   * You can use simple text editors instead, like; Atom, Notepad++, Coda, Sublime text, or others. 
-   * But, I think Jupyter notebook is suitable for researching because it is good at visualizing graphs, sharing codes, reporting results, performing trials and debugging errors (in my opinion.)
 * Type `pip3 install jupyter notebook` to install the Jupyter Notebook.
   * If you want to check a notebook is installed correctly, you can type `jupyter notebook` and see many logs.
-  * But in this case(AWS), you can't see a graphical IDE in your web browser. It is a same when you are setting this in a server machine without GUI. You might only show a web browser IDE when you are setting this up in your local computer with GUI.
+  * However, in this case(AWS), you can't see a graphical IDE in your web browser. It is a same when you are setting this in a server machine without GUI. You might only show a web browser IDE when you are setting this up in your local computer with GUI.
 * Check current working directory is your home folder.
   * Or just type `cd ~`.
 * Type `jupyter notebook --generate-config` for making configure file of your notebook server. 
@@ -53,7 +50,7 @@
     c.NotebookApp.port_retries = 8888
     ```
     * You can see your private IP address in the AWS EC2 Management Console page. Select the instance and see the Description tab. It seems like a `123.45.67.234`.
-    * If you don't want to use the port 8888 then use another number between 1024 ~ 49151.
+    * If you don't want to use the port 8888, then use another number between 1024 ~ 49151.
       * https://en.wikipedia.org/wiki/Port_(computer_networking)#Common_port_numbers
   * Type `:wq!` to save this config file and quit the vi editor.
 * Finally, you can run jupyter notebook server with command `jupyter notebook --no-browser`.
@@ -62,13 +59,13 @@
 * In AWS EC2 Management Console page, select the instance and go to Description > Security groups and check the security group name.
 * In AWS Console page, select from the left menu; Network & Security > Security groups and select the security group name you checked.
 * Select the Inbound tab at the bottom, and add a port number the Jupyter Notebook server used.
-  * Click edit button.
-  * Click add rules button.
+  * Click the **edit** button.
+  * Click the **add rules** button.
     * Type: Custom TCP Rules.
     * Port range: 8888
     * Source: Custom, 0.0.0.0/0
       * If you want to only specific IP can connect the notebook server, write the IP instead of 0.0.0.0
-  * Click save button.
+  * Click the **save** button.
   
 ## 5) Connect with the Jupyter Notebook
 * Go to `[your public IP address:port number]` in your web browser!
