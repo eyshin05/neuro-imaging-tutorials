@@ -7,7 +7,7 @@
 
 ### Informational connectivity
 * A simple implementation of correlation-based classifier (Coutanche et al., 2013.)
-  * and comparison with SVC, LDA classification accuracy
+  * and comparison with SVC, LDA classification probability
 * See this Jupyter Notebook file: `20190502_Informational-connectivity_tutorial.ipynb`
 * written: 2019.05.02
 
