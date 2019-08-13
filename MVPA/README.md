@@ -13,6 +13,6 @@
 
 ### Searchlight analysis tutorial using NiLearn
 * This tutorial is written for Python neuroimaging analysis beginners
-  * From setup AWS to using python as your analysis tool
+  * From setup AWS to use python as your analysis tool
 * See the folder `searchlight-analysis/`
 * written: 2018.09.17.
